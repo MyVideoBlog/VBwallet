@@ -331,7 +331,7 @@
                 transLoading: false,
             //    drawer
                 openDrawer: false,
-                selectedNode: 2,
+                selectedNode: '',
                 nodeList:[],
                 nodeModal: false,
                 newNode:"",
@@ -349,6 +349,11 @@
         },
         mounted() {
             this.acList = this.$store.getters.accountList;
+            if(this.acList.length < 1) {
+                this.$message.info("请先导入至少一个账户");
+                this.$router.push("/welcome")
+                return
+            }
             this.getAccInfo(this.currentAccount);
         },
         destroyed() {
@@ -498,9 +503,9 @@
                 });
             },
             openNodeDrawer(){
-                this.openDrawer = true;
+                this.selectedNode = this.$store.getters.getNodeHost.id;
                 this.nodeList = this.$store.getters.getNodeList;
-
+                this.openDrawer = true;
 
 
 

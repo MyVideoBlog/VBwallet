@@ -124,7 +124,9 @@
             },
             closeCreate(){
                 if(this.recorded){
-                    this.createModal = false
+                    this.pkey = this.newAccount.privateKey;
+                    this.imAccount();
+                    this.createModal = false;
                 } else {
                     this.$message.error('请备份私钥！');
                 }
