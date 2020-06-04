@@ -101,11 +101,14 @@
             <p class="modal_title">收款地址</p>
             <a-input ref="userNameInput" v-model="transTo" placeholder="请收款地址">
                 <a-icon slot="prefix" type="user" />
-                <span  slot="suffix">VB</span>
+                <a-tooltip slot="suffix" title="地址为42位16进制字符串">
+                    <a-icon type="info-circle" style="color: rgba(0,0,0,.45)" />
+                </a-tooltip>
             </a-input>
             <p class="modal_title">转账金额</p>
             <a-input ref="userNameInput" v-model="transAmount" placeholder="请转账金额">
                 <a-icon slot="prefix" type="dollar" />
+                <span  slot="suffix">VB</span>
             </a-input>
 
             <template slot="footer">
