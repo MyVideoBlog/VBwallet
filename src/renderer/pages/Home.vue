@@ -101,7 +101,7 @@
             <p class="modal_title">收款地址</p>
             <a-input ref="userNameInput" v-model="transTo" placeholder="请收款地址">
                 <a-icon slot="prefix" type="user" />
-                <span  slot="suffix">ETH</span>
+                <span  slot="suffix">VB</span>
             </a-input>
             <p class="modal_title">转账金额</p>
             <a-input ref="userNameInput" v-model="transAmount" placeholder="请转账金额">
@@ -402,7 +402,7 @@
                 accInfo.push({
                     title: "余额",
                     value: balance,
-                    unit: 'ETH',
+                    unit: 'VB',
                     icon: "eth"
                 });
                 let gasPriceBN = await getGasPrice();
@@ -415,7 +415,7 @@
                 accInfo.push({
                     title: "Gas price",
                     value: gasPrice,
-                    unit: "ETH",
+                    unit: "VB",
                     icon: "gas"
                 });
 
